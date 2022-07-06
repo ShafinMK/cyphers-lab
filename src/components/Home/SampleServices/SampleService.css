@@ -1,0 +1,10 @@
+/* https://i.ibb.co/zVHTVvr/service-Bg.jpg */
+.service-bg{
+    /* background: linear-gradient(rgba(0, 0, 255, .4), rgba(100, 255, 255, 0.4)), url(' https://i.ibb.co/zVHTVvr/service-Bg.jpg'); */
+    /* background: linear-gradient(rgba(0, 68, 0, 0.8), rgba(3, 85, 3, 0.8)), url(' https://i.ibb.co/zVHTVvr/service-Bg.jpg'); */
+    background-color: lemonchiffon;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* height: 100vh; */
+}

@@ -1,0 +1,13 @@
+.card{
+    transition-duration: .5s;
+    /* transition: top ease 0.5s; */
+    /* position: relative; */
+    top:0;
+    /* background-color: rgb(255, 255, 181); */
+}
+
+.card:hover{
+    box-shadow: 0px 10px 20px rgb(233, 181, 13);
+    top:-10px;
+    
+}

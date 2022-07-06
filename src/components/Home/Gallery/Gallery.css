@@ -1,0 +1,14 @@
+.gal-img{
+    overflow: hidden;
+    /* width: 400px;
+    height: 300px; */
+    
+}
+
+.gal-img img{
+    transition-duration: .5s;
+}
+
+.gal-img img:hover{
+    transform: scale(1.05);
+}

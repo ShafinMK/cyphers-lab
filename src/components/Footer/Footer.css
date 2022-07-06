@@ -1,0 +1,22 @@
+.fa-brands{
+    transition-duration: .5s;
+}
+
+
+
+
+.fa-facebook:hover{
+    color: rgb(90, 90, 250);
+}
+.fa-instagram:hover{
+ color: hotpink;
+}
+
+.fa-twitter:hover{
+    color: rgb(59, 200, 255);
+}
+
+.fa-youtube:hover{
+    color: rgb(235, 44, 44);
+}
+
