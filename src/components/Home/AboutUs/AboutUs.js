@@ -8,7 +8,7 @@ const AboutUs = () => {
             <div className='container py-5'>
             <div className="row align-items-center">
                 <div className="col-12 col-lg-7 p-3 p-lg-5">
-                    <h1>Who we are <br /> and How we Work</h1>
+                    <h1 className='playball-font'>Who we are <br /> and How we Work</h1>
                     <p>Cypher's Lab is one of the leading computer repair shops in the Comilla providing services for individuals and businesses. No matter what kind of a PC you have, we can fix it.</p>
                     <div className="row mt-5">
                         <div className="col">

@@ -55,8 +55,8 @@ const SampleServices = () => {
       {/*  */}
       < div className='container ' >
         {/* <h2>Pause On Hover</h2> */}
-        <div className='text-center text-white my-5'>
-          <h1>What we Offer</h1>
+        <div className='text-center  my-5 navy-blue'>
+          <h1 className='playball-font'>What we Offer</h1>
           <p>We provide various computer repair services and solutions for our new and regular customers. Feel free to find out more below.</p>
         </div>
         <div className=''>

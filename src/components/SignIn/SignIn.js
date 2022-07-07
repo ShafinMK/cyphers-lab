@@ -1,24 +1,42 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import { useForm } from "react-hook-form";
 
 const SignIn = () => {
-    const {auth, signInWithGoogle, signInWithEmail } = useAuth();
+    const {auth, setIsLoading, signInWithGoogle, signInWithEmail } = useAuth();
 
+     //redirection user start
+     const location = useLocation();
+     const navigate = useNavigate();
+     let from = location.state?.from?.pathname || "/";
+     console.log(location.state?.from?.pathname);
+     
+     //redirection user end
+
+    //signing in user start
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         signInWithEmail(auth, data.email, data.password)
         .then((result) => {
             // Signed in 
             console.log(result.user);
-            // ...
+            //redirecting user after signed in
+            navigate(from, {replace:true});
           })
           .catch((error) => {
             
             console.log(error.message);
+          })
+          .finally(() =>{
+            setIsLoading(false);
           });
     };
+    //signing in user end
+
+   
+
+
     return (
         <div className='my-5'>
             <div className='container'>

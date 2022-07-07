@@ -1,3 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
+
 .dark-green{
     color: rgb(0, 66, 0);
+}
+body{
+    font-family: 'Arima', cursive;
+}
+
+.navy-blue{
+    color:rgb(2, 2, 167)
+}
+
+.lobstar2-font{
+    font-family: 'Lobster Two', cursive;
+}
+
+.playball-font{
+    font-family: 'Playball', cursive;
+}
+
+.meridenda-font{
+    font-family: 'Merienda One', cursive;
+    color: rgb(166, 3, 166);
 }

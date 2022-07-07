@@ -9,7 +9,7 @@ const Benefits = () => {
                     <div className="col p-5 text-center text-lg-start">
                         <div className='d-flex align-items-center h-100'>
                             <div>
-                                <h1>Take Advantage of<br />the Benefits and <br />Services of our Specialists<br /></h1>
+                                <h1 className='playball-font'>Take Advantage of<br />the Benefits and <br />Services of our Specialists<br /></h1>
                                 <p className='mt-5'>Get the best customer service and efficient repairs from our technicians. Make an inquiry today to get a flawless computer tomorrow.</p>
                             </div>
                         </div>

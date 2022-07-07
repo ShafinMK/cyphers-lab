@@ -57,7 +57,7 @@ const Team = () => {
 
             <div className='container'>
                 <div className='text-center text-white py-lg-5'>
-                    <h1>Meet Our Team</h1>
+                    <h1 className='playball-font'>Meet Our Team</h1>
                     <p className='pt-3'>All our technicians are fully qualified and licensed. Moreover, they <br /> are incredibly skillful and proficient in various aspects of computer <br /> repair.</p>
                 </div>
 

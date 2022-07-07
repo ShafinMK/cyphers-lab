@@ -5,7 +5,7 @@ const Packages = () => {
     return (
         <div className='text-center my-5 container'>
             <div className='my-5'>
-                <h1>Select Your Package</h1>
+                <h1 className='playball-font'>Select Your Package</h1>
                 <p className='pt-4'>Take a look at our pricing plans and select the computer repair services that meet your needs the most.</p>
             </div>
             <div className='row row-cols-1 row-cols-lg-3 g-4'>

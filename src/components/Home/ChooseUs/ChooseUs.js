@@ -7,7 +7,7 @@ const ChooseUs = () => {
         <div className='my-5'>
             <div className='container'>
                 <div className='text-center my-5'>
-                    <h1>Why Choose Us</h1>
+                    <h1 className='playball-font'>Why Choose Us</h1>
                     <p>There are dozens of reasons why our clients choose Fixoria as their computer service provider of choice.</p>
                 </div>
                 <div className="row row-cols-1 row-cols-lg-3 g-4 ">

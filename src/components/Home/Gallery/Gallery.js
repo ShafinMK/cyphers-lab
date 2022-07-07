@@ -4,7 +4,7 @@ const Gallery = () => {
     return (
         <div className='my-5 p-2 '>
             <div className='text-center my-5'>
-                <h1>Some of Our Works</h1>
+                <h1 className='playball-font'>Some of Our Works</h1>
                 <p>Lorem ipsum dolor sit amet consectetur.</p>
             </div>
 
