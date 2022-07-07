@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import './Header.css';
 
 const Header = () => {
     let activeNavLinkStyle = 'active-link';
+    const { user, logOut } = useAuth();
     return (
         <div className=' w-100 sticky-top'>
             {/* <div className='position-absolute w-100 bg-dark ' style={{height:'100%'}}></div> */}
@@ -31,11 +33,17 @@ const Header = () => {
 
                             </li>
                             <li className="nav-item">
-                                <NavLink to='/signin' style={{ textDecoration: 'none' }} className={({ isActive }) => isActive ? 'active-link' : 'text-light'}><span className='header-link px-3'>Log in</span></NavLink>
+                                {
+                                    user.email ? <button className='btn btn-danger' onClick={logOut}>Log out</button>
+                                    :<NavLink to='/signin' style={{ textDecoration: 'none' }} className={({ isActive }) => isActive ? 'active-link' : 'text-light'}><span className='header-link px-3'>Log in</span></NavLink>
+                                }
+                                
 
                             </li>
 
                         </ul>
+
+
 
 
                     </div>

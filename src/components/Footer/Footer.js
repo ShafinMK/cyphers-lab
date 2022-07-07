@@ -30,10 +30,10 @@ const Footer = () => {
                         <h1>Subscribe to Newsletter</h1>
                         <p>Sign up for our e-mail and be the first to know about our special offers!</p>
 
-                        <div class="input-group mb-3 ">
-                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-envelope"></i></span>
-                            <input type="email" class="form-control" placeholder="Type Your Email" />
-                            <button class="btn btn-outline-secondary bg-warning text-dark" type="button" id="button-addon2">Subscribe</button>
+                        <div className="input-group mb-3 ">
+                            <span className="input-group-text" id="basic-addon1"><i className="fa-solid fa-envelope"></i></span>
+                            <input type="email" className="form-control" placeholder="Type Your Email" />
+                            <button className="btn btn-outline-secondary bg-warning text-dark" type="button" id="button-addon2">Subscribe</button>
                         </div>
 
                         <div className="row mt-5">

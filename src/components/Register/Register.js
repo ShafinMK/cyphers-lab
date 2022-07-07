@@ -1,10 +1,25 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 const Register = () => {
 
+    const {auth, createUserwithEmailandPassword} = useAuth();
+
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        console.log(data.email);
+        createUserwithEmailandPassword(auth,data.email, data.password)
+        .then((result) => {
+          console.log(result.user);
+        })
+        .catch((error) => {
+          
+          console.log(error.message);
+          
+        });
+
+    };
 
 
     return (
@@ -17,20 +32,15 @@ const Register = () => {
                 </div>
                 {/* register your input into the hook by invoking the "register" function */}
                 <div className="mb-3">
-                    <input type='email' className="form-control rounded-pill p-lg-3" placeholder='Email'  {...register("example")} />
+                    <input type='email' className="form-control rounded-pill p-lg-3" placeholder='Email'  {...register("email")} />
                 </div>
                 <div className='mb-3'>
                     {/* include validation with required or other standard HTML validation rules */}
-                    <input type='password' className='form-control rounded-pill p-lg-3' placeholder='Password' {...register("passwordRequired", { required: true })} />
+                    <input type='password' className='form-control rounded-pill p-lg-3' placeholder='Password' {...register("password", { required: true })} />
                     {/* errors will return when field validation fails  */}
-                    {errors.passwordRequired && <span>This field is required</span>}
+                    {errors.password && <span>This field is required</span>}
                 </div>
-                <div className='mb-3'>
-                    {/* include validation with required or other standard HTML validation rules */}
-                    <input type='text' className='form-control rounded-pill p-lg-3' placeholder='Name' {...register("nameRequired", { required: true })} />
-                    {/* errors will return when field validation fails  */}
-                    {errors.nameRequired && <span>This field is required</span>}
-                </div>
+                
                 <div className="mb-3 form-check">
                     <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                     <label className="form-check-label" htmlFor="exampleCheck1">By clicking the button you agree to the <Link to='/privacyterms'>Privacy Policy</Link> and <Link to='/privacyterms'>Terms of Service</Link></label>
