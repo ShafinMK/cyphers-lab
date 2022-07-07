@@ -35,7 +35,7 @@ const Header = () => {
                             </li>
                             <li className="nav-item">
                                 {
-                                    user.email ? <div><img src={user.photoURL? user.photoURL :userIcon } className='rounded-circle mx-2' style={{height:'30px', widhth:'30px'}} alt="" /><button className='btn btn-danger' onClick={logOut}>Log out</button></div>
+                                    user.email ? <div><img src={user.photoURL? user.photoURL :userIcon } className='rounded-circle mx-2' style={{height:'30px', widhth:'30px'} } referrerpolicy="no-referrer" alt="" /><button className='btn btn-danger' onClick={logOut}>Log out</button></div>
                                     :<NavLink to='/signin' style={{ textDecoration: 'none' }} className={({ isActive }) => isActive ? 'active-link' : 'text-light'}><span className='header-link px-3'>Log in</span></NavLink>
                                 }
                                 

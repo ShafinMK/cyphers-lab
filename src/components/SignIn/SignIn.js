@@ -4,7 +4,7 @@ import useAuth from '../../hooks/useAuth';
 import { useForm } from "react-hook-form";
 
 const SignIn = () => {
-    const {auth, setIsLoading, signInWithGoogle, signInWithEmail } = useAuth();
+    const {auth,setUser, setError, setIsLoading, signInWithGoogle, signInWithEmail } = useAuth();
 
      //redirection user start
      const location = useLocation();
@@ -34,6 +34,20 @@ const SignIn = () => {
     };
     //signing in user end
 
+    const handleGoogleSignin = ()=>{
+        signInWithGoogle()
+        .then(result => {
+            setUser(result.user);
+            navigate(from, {replace:true});
+          })
+          .catch(error => {
+            setError(error.message);
+          })
+          .finally(() => {
+            setIsLoading(false);
+          })
+
+    }
    
 
 
@@ -62,7 +76,7 @@ const SignIn = () => {
                             </div>
 
                             <div className='mb-3 d-flex justify-content-center mt-5'>
-                                <button className='btn btn-light px-5 py-2 rounded-pill border' onClick={signInWithGoogle}><i className="fa-brands fa-google me-2"></i>Sign in with Google</button>
+                                <button className='btn btn-light px-5 py-2 rounded-pill border' onClick={handleGoogleSignin}><i className="fa-brands fa-google me-2"></i>Sign in with Google</button>
                                 <br />
 
                             </div>

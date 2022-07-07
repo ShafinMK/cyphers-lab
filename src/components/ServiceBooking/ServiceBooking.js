@@ -19,7 +19,7 @@ const ServiceBooking = () => {
     }, []);
 
     let found = {};
-    services.length? found = services.find(service => service.id === parseInt(serviceID)) : found={};
+    services.length ? found = services.find(service => service.id === parseInt(serviceID)) : found = {};
     console.log(found);
     const { cost, serviceDescription, serviceInfo, serviceName, serviceThumb, serviceTime } = found;
 
@@ -56,7 +56,27 @@ const ServiceBooking = () => {
                     <div className='col-12 col-lg-6 p-5'>
                         <h2 className='text-primary'>Pre-Book to Get 4% Off!</h2>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate eos voluptatibus eaque unde. Vero officiis, inventore at praesentium id laboriosam commodi delectus optio quod odit sed voluptas itaque iste alias.</p>
-                        <button className='btn btn-danger'>Book Service</button>
+                        <button className='btn btn-danger' data-bs-toggle="modal" data-bs-target="#bookingConfirm">Book Service</button>
+
+                        {/* modal start  */}
+                        <div class="modal fade" id="bookingConfirm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        {/* <h5 class=" text-center">Your Appointment is Confirmed</h5> */}
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h4 className='text-center text-success'>Booking Confirmed!</h4>
+                                        <p className='text-center'>Thank's for Choosing Us</p>
+                                        <img src={require('../../images/Confirmed.gif')} className='img-fluid' alt="" />
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        {/* modal end  */}
                     </div>
                     <div className="col-12 col-lg-6 d-flex justify-content-center">
                         <Calendar onChange={onChange} value={value} />

@@ -1,25 +1,48 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 const Register = () => {
 
-    const {auth, createUserwithEmailandPassword} = useAuth();
+    const { auth, createUserwithEmailandPassword, signInWithGoogle, setUser, setError, setIsLoading } = useAuth();
+
+    //redirection user start
+    const location = useLocation();
+    const navigate = useNavigate();
+    let from = location.state?.from?.pathname || "/";
+    console.log(location.state?.from?.pathname);
+
+    //redirection user end
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data.email);
-        createUserwithEmailandPassword(auth,data.email, data.password)
-        .then((result) => {
-          console.log(result.user);
-        })
-        .catch((error) => {
-          
-          console.log(error.message);
-          
-        });
+        createUserwithEmailandPassword(auth, data.email, data.password)
+            .then((result) => {
+                navigate(from, { replace: true });
+                console.log(result.user);
+            })
+            .catch((error) => {
+
+                console.log(error.message);
+
+            });
 
     };
+
+    const handleGoogleSignUp = () => {
+        signInWithGoogle()
+            .then(result => {
+                setUser(result.user);
+                navigate(from, { replace: true });
+            })
+            .catch(error => {
+                setError(error.message);
+            })
+            .finally(() => {
+                setIsLoading(false);
+            })
+    }
 
 
     return (
@@ -40,7 +63,7 @@ const Register = () => {
                     {/* errors will return when field validation fails  */}
                     {errors.password && <span>This field is required</span>}
                 </div>
-                
+
                 <div className="mb-3 form-check">
                     <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                     <label className="form-check-label" htmlFor="exampleCheck1">By clicking the button you agree to the <Link to='/privacyterms'>Privacy Policy</Link> and <Link to='/privacyterms'>Terms of Service</Link></label>
@@ -52,7 +75,7 @@ const Register = () => {
                 </div>
 
                 <div className='mb-3 d-flex justify-content-center mt-5'>
-                    <button className='btn btn-light px-5 py-2 rounded-pill border'><i className="fa-brands fa-google me-2"></i>Sign up with Google</button>
+                    <button onClick={handleGoogleSignUp} className='btn btn-light px-5 py-2 rounded-pill border'><i className="fa-brands fa-google me-2"></i>Sign up with Google</button>
                     <br />
 
                 </div>
