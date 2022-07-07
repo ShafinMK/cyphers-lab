@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
 
 .dark-green{
     color: rgb(0, 66, 0);
@@ -12,6 +14,9 @@ body{
 
 .navy-blue{
     color:rgb(2, 2, 167)
+}
+.cyan{
+    color:cyan;
 }
 
 .lobstar2-font{
@@ -25,4 +30,8 @@ body{
 .meridenda-font{
     font-family: 'Merienda One', cursive;
     color: rgb(166, 3, 166);
+}
+
+.courgette-font{
+    font-family: 'Courgette', cursive;
 }
