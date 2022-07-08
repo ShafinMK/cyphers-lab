@@ -15,7 +15,7 @@ const Header = () => {
                     <NavLink to='/' style={{ textDecoration: 'none' }} >
 
                         <div className='d-flex h-100 p-0 align-items-center'>
-                        <img src={require('../../images/icons/homeicon.png')} alt="" width="40" height="40" class="d-inline-block align-text-top" />
+                        <img src={require('../../images/icons/homeicon.png')} alt="" width="40" height="40" className="d-inline-block align-text-top" />
                             <h6 className='  text-white shrikhand m-0 '>
                                 
                                 <span className='cyan p-0'>Cypher's</span> Lab
@@ -44,7 +44,7 @@ const Header = () => {
                             </li>
                             <li className="nav-item">
                                 {
-                                    user.email ? <div><img src={user.photoURL ? user.photoURL : userIcon} className='rounded-circle mx-2' style={{ height: '30px', widhth: '30px' }} referrerpolicy="no-referrer" alt="" /><button className='btn btn-danger' onClick={logOut}>Log out</button></div>
+                                    user.uid ? <div><img src={user.photoURL ? user.photoURL : userIcon} className='rounded-circle mx-2' style={{ height: '30px', widhth: '30px' }} referrerPolicy="no-referrer" alt="" /><button className='btn btn-danger' onClick={logOut}>Log out</button></div>
                                         : <NavLink to='/signin' style={{ textDecoration: 'none' }} className={({ isActive }) => isActive ? 'active-link' : 'text-light'}><span className='header-link px-3'>Log in</span></NavLink>
                                 }
 

@@ -14,13 +14,13 @@ const ServiceBooking = () => {
             .then(res => res.json())
             .then(data => {
                 setServices(data);
-                console.log(data);
+                // console.log(data);
             })
     }, []);
 
     let found = {};
     services.length ? found = services.find(service => service.id === parseInt(serviceID)) : found = {};
-    console.log(found);
+    // console.log(found);
     const { cost, serviceDescription, serviceInfo, serviceName, serviceThumb, serviceTime } = found;
 
 
@@ -59,14 +59,14 @@ const ServiceBooking = () => {
                         <button className='btn btn-danger' data-bs-toggle="modal" data-bs-target="#bookingConfirm">Book Service</button>
 
                         {/* modal start  */}
-                        <div class="modal fade" id="bookingConfirm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        {/* <h5 class=" text-center">Your Appointment is Confirmed</h5> */}
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div className="modal fade" id="bookingConfirm" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div className="modal-dialog modal-dialog-centered">
+                                <div className="modal-content">
+                                    <div className="modal-header">
+                                        {/* <h5 className=" text-center">Your Appointment is Confirmed</h5> */}
+                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <div class="modal-body">
+                                    <div className="modal-body">
                                         <h4 className='text-center text-success'>Booking Confirmed!</h4>
                                         <p className='text-center'>Thank's for Choosing Us</p>
                                         <img src={require('../../images/Confirmed.gif')} className='img-fluid' alt="" />

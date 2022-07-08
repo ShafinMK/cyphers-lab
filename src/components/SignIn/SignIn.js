@@ -4,13 +4,13 @@ import useAuth from '../../hooks/useAuth';
 import { useForm } from "react-hook-form";
 
 const SignIn = () => {
-    const {auth,setUser, setError, setIsLoading, signInWithGoogle, signInWithEmail } = useAuth();
+    const {auth,setUser,error, setError, setIsLoading, signInWithGoogle,signInWithTwitter, signInWithEmail } = useAuth();
 
      //redirection user start
      const location = useLocation();
      const navigate = useNavigate();
      let from = location.state?.from?.pathname || "/";
-     console.log(location.state?.from?.pathname);
+    //  console.log(location.state?.from?.pathname);
      
      //redirection user end
 
@@ -27,6 +27,7 @@ const SignIn = () => {
           .catch((error) => {
             
             console.log(error.message);
+            setError(error.message);
           })
           .finally(() =>{
             setIsLoading(false);
@@ -48,6 +49,20 @@ const SignIn = () => {
           })
 
     }
+
+    //sign in with twitter
+    const handleTwitterSignIn = ()=>{
+        signInWithTwitter()
+        .then((result) => {
+            const user = result.user;
+            navigate(from, { replace: true });
+            // console.log(user);
+            // ...
+          }).catch((error) => {
+            setError(error.message);
+           
+          });
+    }
    
 
 
@@ -55,7 +70,7 @@ const SignIn = () => {
         <div className='my-5'>
             <div className='container'>
                 <h1 className='text-center'>Sign in</h1>
-
+                <p className='text-danger text-center'>{error}</p>
                 <div className="row justify-content-center">
 
                     <div className="col-12 col-md-8 col-lg-6">
@@ -82,7 +97,7 @@ const SignIn = () => {
                             </div>
                             <div className='mb-3 d-flex justify-content-center mt-2'>
 
-                                <button className='btn btn-light px-5 py-2 rounded-pill border'><i className="fa-brands fa-twitter me-2"></i>Sign in with Twitter</button>
+                                <button onClick={handleTwitterSignIn} className='btn btn-light px-5 py-2 rounded-pill border'><i className="fa-brands fa-twitter me-2"></i>Sign in with Twitter</button>
                             </div>
 
                             <div className='text-center'>

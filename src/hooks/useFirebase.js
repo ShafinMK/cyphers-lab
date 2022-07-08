@@ -1,5 +1,5 @@
 import initalizeAuthentication from "../Firebase/initializeAuthentication";
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider,TwitterAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { useEffect, useState } from "react";
 
 initalizeAuthentication();
@@ -11,12 +11,18 @@ const useFirebase = () => {
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const googleProvider = new GoogleAuthProvider();
+  const twitterProvider = new TwitterAuthProvider();
 
   const signInWithGoogle = () => {
     return signInWithPopup(auth, googleProvider);
       
 
   };
+
+  const signInWithTwitter = ()=> {
+    return signInWithPopup(auth, twitterProvider);
+    
+  }
 
   const createUserwithEmailandPassword = (auth, email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -61,7 +67,7 @@ const useFirebase = () => {
 
   }
 
-  return { user, error, auth, isLoading, setUser, setIsLoading, setError, signInWithEmail, signInWithGoogle, createUserwithEmailandPassword, logOut };
+  return { user, error, auth, isLoading, setUser, setIsLoading, setError, signInWithEmail, signInWithGoogle, signInWithTwitter, createUserwithEmailandPassword, logOut };
 
 }
 

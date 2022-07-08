@@ -17,7 +17,7 @@ const PrivateRoute = (props) => {
 
     const { children } = props;
     // console.log(location);
-    return user.email ? children : <Navigate to='/signin' state={{ from: location }} replace></Navigate>
+    return user.uid ? children : <Navigate to='/signin' state={{ from: location }} replace></Navigate>
 };
 
 export default PrivateRoute;

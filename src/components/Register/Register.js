@@ -4,13 +4,13 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 const Register = () => {
 
-    const { auth, createUserwithEmailandPassword, signInWithGoogle, setUser, setError, setIsLoading } = useAuth();
+    const { auth, createUserwithEmailandPassword, signInWithGoogle, signInWithTwitter, setUser, setError, setIsLoading } = useAuth();
 
     //redirection user start
     const location = useLocation();
     const navigate = useNavigate();
     let from = location.state?.from?.pathname || "/";
-    console.log(location.state?.from?.pathname);
+    // console.log(location.state?.from?.pathname);
 
     //redirection user end
 
@@ -20,7 +20,7 @@ const Register = () => {
         createUserwithEmailandPassword(auth, data.email, data.password)
             .then((result) => {
                 navigate(from, { replace: true });
-                console.log(result.user);
+                // console.log(result.user);
             })
             .catch((error) => {
 
@@ -42,6 +42,19 @@ const Register = () => {
             .finally(() => {
                 setIsLoading(false);
             })
+    };
+
+    const handleTwitterSignUp = ()=>{
+        signInWithTwitter()
+        .then((result) => {
+            const user = result.user;
+            navigate(from, { replace: true });
+            // console.log(user);
+            // ...
+          }).catch((error) => {
+            setError(error.message);
+           
+          });
     }
 
 
@@ -81,7 +94,7 @@ const Register = () => {
                 </div>
                 <div className='mb-3 d-flex justify-content-center mt-2'>
 
-                    <button className='btn btn-light px-5 py-2 rounded-pill border'><i className="fa-brands fa-twitter me-2"></i>Sign up with Twitter</button>
+                    <button onClick={handleTwitterSignUp} className='btn btn-light px-5 py-2 rounded-pill border'><i className="fa-brands fa-twitter me-2"></i>Sign up with Twitter</button>
                 </div>
                 <div className='text-center'>
                     <Link to='/signin'>Already Signed UP? Log in Now!</Link>
