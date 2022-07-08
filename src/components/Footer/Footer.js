@@ -9,24 +9,30 @@ const Footer = () => {
             <div className="container py-5">
                 <div className="row g-4">
                     <div className='col-12 col-lg-6'>
-                        <h1>Cypher's Lab</h1>
-                        <p className='pt-5'>Reach us:</p>
-                        <h1>+(880) 1234567890</h1>
-                        <p>Burj Khalifa, 58th Floor, D block, 34 Row, <br /> Kandirpar, Comilla</p>
-                        <h5>cypherslab@gomail.com</h5>
-                        <div className='py-5'>
-                            <i className=" p-4 fs-4 fa-brands fa-facebook"></i>
-                            <i className=" p-4 fs-4 fa-brands fa-instagram"></i>
-                            <i className=" p-4 fs-4 fa-brands fa-twitter"></i>
-                            <i className=" p-4 fs-4 fa-brands fa-youtube"></i>
-
+                        <div className='d-flex justify-content-center justify-content-lg-start'>
+                            <img src={require('../../images/icons/homeicon.png')} width='40' height='40' alt="" />
+                            <h1> <span className='cyan p-0'>Cypher's</span> <span className='red'>Lab</span></h1>
                         </div>
 
-                        <span>&copy;2022 Cypher's Lab. <Link to='/privacyterms'>Privacy Policy</Link></span>
+                        <div className='text-center text-lg-start'>
+                            <p className='pt-5'>Reach us:</p>
+                            <h1>+(880) 1234567890</h1>
+                            <p>Burj Khalifa, 58th Floor, D block, 34 Row, <br /> Kandirpar, Comilla</p>
+                            <h5>cypherslab@gomail.com</h5>
+                            <div className='py-5'>
+                                <i className=" p-4 fs-4 fa-brands fa-facebook"></i>
+                                <i className=" p-4 fs-4 fa-brands fa-instagram"></i>
+                                <i className=" p-4 fs-4 fa-brands fa-twitter"></i>
+                                <i className=" p-4 fs-4 fa-brands fa-youtube"></i>
+
+                            </div>
+
+                            <span>&copy;2022 Cypher's Lab. <Link to='/privacyterms'>Privacy Policy</Link></span>
+                        </div>
                     </div>
 
 
-                    <div className='col-12 col-lg-6'>
+                    <div className='col-12 col-lg-6 text-center text-lg-start'>
                         <h1>Subscribe to Newsletter</h1>
                         <p>Sign up for our e-mail and be the first to know about our special offers!</p>
 
