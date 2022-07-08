@@ -15,7 +15,7 @@ const Banner = () => {
 
                     </div>
                 </div>
-                <div className='w-25 d-flex flex-row flex-lg-column  align-items-center'>
+                <div className='w-25 d-flex flex-row flex-lg-column justify-content-evenly align-items-center'>
                     <div className='rounded-circle bg-light my-3' style={{ height: '10px', width: '10px' }}></div>
                     <div className='rounded-circle bg-light my-3' style={{ height: '10px', width: '10px' }}></div>
                 </div>

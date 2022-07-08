@@ -10,7 +10,7 @@ const Header = () => {
     return (
         <div className=' w-100 sticky-top'>
             {/* <div className='position-absolute w-100 bg-dark ' style={{height:'100%'}}></div> */}
-            <nav className="navbar navbar-expand-lg  bg-dark" >
+            <nav className="navbar navbar-expand-lg navbar-dark  bg-dark" >
                 <div className="container">
                     <NavLink to='/' style={{ textDecoration: 'none' }} >
 
@@ -18,12 +18,12 @@ const Header = () => {
                         <img src={require('../../images/icons/homeicon.png')} alt="" width="40" height="40" className="d-inline-block align-text-top" />
                             <h6 className='  text-white shrikhand m-0 '>
                                 
-                                <span className='cyan p-0'>Cypher's</span> Lab
+                                <span className='cyan p-0'>Cypher's</span> <span className='red'>Lab</span>
                             </h6>
                         </div>
                     </NavLink>
 
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button className="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
 

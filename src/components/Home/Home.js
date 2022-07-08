@@ -10,7 +10,7 @@ import Team from './Team/Team';
 import Benefits from './Benefits/Benefits';
 const Home = () => {
     return (
-        <div className=''>
+        <div className='overflow-hidden'>
            <Banner></Banner>
            <AboutUs></AboutUs>
            <SampleServices></SampleServices>

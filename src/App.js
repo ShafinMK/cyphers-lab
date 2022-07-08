@@ -20,6 +20,7 @@ import AuthProvider from './context/AuthProvider';
 import ServiceBooking from './components/ServiceBooking/ServiceBooking';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import { useEffect } from 'react';
+import TermsAndPrivacy from './components/TermsAndPrivacy/TermsAndPrivacy';
 
 function App() {
   const ScrollToTop = () => {
@@ -44,6 +45,7 @@ function App() {
             <Route path='/signin' element={<SignIn></SignIn>} />
             <Route path='/home' element={<Home></Home>} />
             <Route path='/register' element={<Register></Register>} />
+            <Route path='/privacyterms' element={<TermsAndPrivacy></TermsAndPrivacy>}></Route>
             <Route path='/services/servicebooking/:serviceID' element={<PrivateRoute><ServiceBooking></ServiceBooking></PrivateRoute>}></Route>
             <Route path='/*' element={<NotFound></NotFound>}></Route>
 

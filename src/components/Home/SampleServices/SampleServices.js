@@ -53,7 +53,7 @@ const SampleServices = () => {
   return (
     <div className='service-bg py-5'>
       {/*  */}
-      < div className='container ' >
+      < div className=' container' > 
         {/* <h2>Pause On Hover</h2> */}
         <div className='text-center  my-5 navy-blue'>
           <h1 className='playball-font'>What we Offer</h1>

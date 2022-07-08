@@ -18,6 +18,9 @@ body{
 .cyan{
     color:cyan;
 }
+.red{
+    color: #ff3051;
+}
 
 .lobstar2-font{
     font-family: 'Lobster Two', cursive;
