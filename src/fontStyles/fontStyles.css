@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
 .dark-green{
     color: rgb(0, 66, 0);
@@ -34,4 +34,8 @@ body{
 
 .courgette-font{
     font-family: 'Courgette', cursive;
+}
+
+.shrikhand{
+    font-family: 'Shrikhand', cursive;
 }

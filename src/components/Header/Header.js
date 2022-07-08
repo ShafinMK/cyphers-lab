@@ -12,7 +12,16 @@ const Header = () => {
             {/* <div className='position-absolute w-100 bg-dark ' style={{height:'100%'}}></div> */}
             <nav className="navbar navbar-expand-lg  bg-dark" >
                 <div className="container">
-                    <NavLink to='/' style={{ textDecoration: 'none' }} ><h1 className=' px-3 text-white'>Cypher's Lab</h1></NavLink>
+                    <NavLink to='/' style={{ textDecoration: 'none' }} >
+
+                        <div className='d-flex h-100 p-0 align-items-center'>
+                        <img src={require('../../images/icons/homeicon.png')} alt="" width="40" height="40" class="d-inline-block align-text-top" />
+                            <h6 className='  text-white shrikhand m-0 '>
+                                
+                                <span className='cyan p-0'>Cypher's</span> Lab
+                            </h6>
+                        </div>
+                    </NavLink>
 
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -35,10 +44,10 @@ const Header = () => {
                             </li>
                             <li className="nav-item">
                                 {
-                                    user.email ? <div><img src={user.photoURL? user.photoURL :userIcon } className='rounded-circle mx-2' style={{height:'30px', widhth:'30px'} } referrerpolicy="no-referrer" alt="" /><button className='btn btn-danger' onClick={logOut}>Log out</button></div>
-                                    :<NavLink to='/signin' style={{ textDecoration: 'none' }} className={({ isActive }) => isActive ? 'active-link' : 'text-light'}><span className='header-link px-3'>Log in</span></NavLink>
+                                    user.email ? <div><img src={user.photoURL ? user.photoURL : userIcon} className='rounded-circle mx-2' style={{ height: '30px', widhth: '30px' }} referrerpolicy="no-referrer" alt="" /><button className='btn btn-danger' onClick={logOut}>Log out</button></div>
+                                        : <NavLink to='/signin' style={{ textDecoration: 'none' }} className={({ isActive }) => isActive ? 'active-link' : 'text-light'}><span className='header-link px-3'>Log in</span></NavLink>
                                 }
-                                
+
 
                             </li>
 

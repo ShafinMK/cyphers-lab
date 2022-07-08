@@ -10,7 +10,7 @@ const Banner = () => {
                     <h6 className='text-center text-lg-start'>Welcome to Cypher's Lab, your one-stop place fr all kinds <br /> or computer repairs and diagnostics.</h6>
                     <div className='text-center text-lg-start'>
                         <Link to='/services'>
-                            <button className=' btn my-4 rounded-pill px-4 py-2 text-light bg-cyan border border-3 '>View All Services</button>
+                            <button className='banner-btn  my-4 rounded-pill px-4 py-2 '>View All Services</button>
                         </Link>
 
                     </div>

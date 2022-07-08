@@ -3,6 +3,7 @@
     color: white;
 }
 
-.bg-cyan{
-    background-color: rgb(6, 174, 174);
+.bg-cyan:hover{
+    color: cyan;
+    
 }

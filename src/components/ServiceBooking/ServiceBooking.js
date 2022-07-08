@@ -42,10 +42,10 @@ const ServiceBooking = () => {
                         <p>{serviceDescription}</p>
 
                         <h2 className='text-primary'>Service Charge</h2>
-                        <p>Price starting from {cost} tk</p>
+                        <p>Price starting from (BDT) : {cost}</p>
 
                         <h2 className='text-primary'>Service Time (Approximate)</h2>
-                        <p>About {serviceTime}</p>
+                        <p>{serviceTime}</p>
                     </div>
                     <div className="col-12 col-lg-6 p-5">
                         <img src={serviceThumb} className='img-fluid' alt="" />

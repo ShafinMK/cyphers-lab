@@ -9,3 +9,15 @@
 
 }
 
+.banner-btn {
+    background: transparent;
+    color: white;
+    border:3px solid;
+    border-color: white;
+    transition-duration: .5s;
+}
+.banner-btn:hover{
+    color: cyan;
+    border-color: cyan;
+}
+
